@@ -73,8 +73,6 @@ warrior_sheet = pygame.image.load("assets/images/warrior/Sprites/warrior.png").c
 wizard_sheet = pygame.image.load("assets/images/wizard/Sprites/wizard.png").convert_alpha()
 warrior_sheet1 = pygame.image.load("assets/images/warrior/Sprites/char_blue.png").convert_alpha()
 
-
-
 #load vicory image
 victory_img = pygame.image.load("assets/images/icons/victory.png").convert_alpha()
 
