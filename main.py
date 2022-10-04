@@ -73,9 +73,7 @@ warrior_sheet = pygame.image.load("assets/images/warrior/Sprites/warrior.png").c
 wizard_sheet = pygame.image.load("assets/images/wizard/Sprites/wizard.png").convert_alpha()
 warrior_sheet1 = pygame.image.load("assets/images/warrior/Sprites/char_blue.png").convert_alpha()
 
-print(warrior_sheet)
-print(wizard_sheet)
-print(warrior_sheet1)
+
 
 #load vicory image
 victory_img = pygame.image.load("assets/images/icons/victory.png").convert_alpha()
@@ -94,6 +92,7 @@ def draw_text(text, font, text_col, x, y):
   screen.blit(img, (x, y))
 
 #function for drawing background
+scaled_bg = pygame.transform.scale(bg_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
 def draw_bg():
   scaled_bg = pygame.transform.scale(bg_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
   screen.blit(scaled_bg, (0, 0))
@@ -107,9 +106,9 @@ def draw_health_bar(health, x, y):
 
 lev=1
 #create two instances of fighters
-fighter_3 = Fighter(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_fx)
+fighter_1 = Fighter(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_fx)
 fighter_2 = Fighter(2, 700, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, magic_fx)
-fighter_1 = Fighter(lev, 491, 761, False, WARRIOR_DATA1, warrior_sheet1, WARRIOR_ANIMATION_STEPS_1, sword_fx)
+fighter_3 = Fighter(lev, 491, 761, False, WARRIOR_DATA1, warrior_sheet1, WARRIOR_ANIMATION_STEPS_1, sword_fx)
 
 #game loop
 run = True
@@ -129,7 +128,7 @@ while run:
 
   while(i < tiles): 
 
-    screen.blit(bg_image, (bg_image.get_width()*i  + scroll, 0)) 
+    screen.blit(scaled_bg, (scaled_bg.get_width()*i  + scroll, 0)) 
 
     i += 1
 
@@ -141,7 +140,7 @@ while run:
 
   # RESET THE SCROLL FRAME 
 
-  if abs(scroll) > bg_image.get_width(): 
+  if abs(scroll) > scaled_bg.get_width(): 
       scroll = 0
 
   #show player stats
