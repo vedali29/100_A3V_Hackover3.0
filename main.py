@@ -35,8 +35,8 @@ WARRIOR_SCALE = 4
 WARRIOR_OFFSET = [72, 56]
 WARRIOR_DATA = [WARRIOR_SIZE, WARRIOR_SCALE, WARRIOR_OFFSET]
 WARRIOR_SIZE1 = 56
-WARRIOR_SCALE1 = 7
-WARRIOR_OFFSET1 = [72, 30]
+WARRIOR_SCALE1 = 5
+WARRIOR_OFFSET1 = [42, 15]
 WARRIOR_DATA1 = [WARRIOR_SIZE1, WARRIOR_SCALE1, WARRIOR_OFFSET1]
 WIZARD_SIZE = 250
 WIZARD_SCALE = 3
@@ -104,9 +104,9 @@ def draw_health_bar(health, x, y):
 
 lev=1
 #create two instances of fighters
-fighter_1 = Fighter(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_fx)
+fighter_3 = Fighter(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_fx)
 fighter_2 = Fighter(2, 700, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, magic_fx)
-fighter_3 = Fighter(lev, 491, 761, False, WARRIOR_DATA1, warrior_sheet1, WARRIOR_ANIMATION_STEPS_1, sword_fx)
+fighter_1 = Fighter(lev, 491, 761, False, WARRIOR_DATA1, warrior_sheet1, WARRIOR_ANIMATION_STEPS_1, sword_fx)
 
 #game loop
 run = True
